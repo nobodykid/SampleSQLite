@@ -32,12 +32,16 @@ namespace SampleSQLite
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var name = txtName.Text;
-            var score = int.Parse(txtScore.Text);
+            var _name = txtName.Text;
+            var _score = int.Parse(txtScore.Text);
 
-            
+            Items newItem = new Items() { Name = _name, Score = _score };
+
+            await conn.InsertAsync(newItem);
+
+            Frame.GoBack();
         }
     }
 }

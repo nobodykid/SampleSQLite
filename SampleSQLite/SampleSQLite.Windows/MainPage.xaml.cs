@@ -35,12 +35,16 @@ namespace SampleSQLite
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             await conn.CreateTableAsync<Items>();
-            base.OnNavigatedTo(e);
+
+            items = await conn.Table<Items>().ToListAsync();
+
+            lstName.ItemsSource = items;
+            lstScore.ItemsSource = items;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddPage));
+            Frame.Navigate(typeof(AddPage));
         }
     }
 }

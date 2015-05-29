@@ -19,8 +19,24 @@
     	</StackPanel>
     	<TextBlock HorizontalAlignment="Left" Margin="320,250,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Style="{StaticResource SubheaderTextBlockStyle}"/>
     	<TextBlock HorizontalAlignment="Left" Margin="743,250,0,0" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" Style="{StaticResource SubheaderTextBlockStyle}"/>
-    	<ListView HorizontalAlignment="Left" Height="427" Margin="176,307,0,0" VerticalAlignment="Top" Width="356"/>
-    	<ListView HorizontalAlignment="Left" Height="427" Margin="604,307,0,0" VerticalAlignment="Top" Width="359"/>
+        <ListView x:Name="lstName" HorizontalAlignment="Left" Height="427" Margin="176,307,0,0" VerticalAlignment="Top" Width="356">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    	<ListView x:Name="lstScore" HorizontalAlignment="Left" Height="427" Margin="604,307,0,0" VerticalAlignment="Top" Width="359">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Score}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>
