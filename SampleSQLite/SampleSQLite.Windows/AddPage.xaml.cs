@@ -23,24 +23,21 @@ namespace SampleSQLite
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AddPage : Page
     {
         SQLiteAsyncConnection conn = new SQLiteAsyncConnection("Items.db");
-        public List<Items> items;
-        public MainPage()
+        public List<Items> item;
+        public AddPage()
         {
             this.InitializeComponent();
         }
 
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            await conn.CreateTableAsync<Items>();
-            base.OnNavigatedTo(e);
-        }
+            var name = txtName.Text;
+            var score = int.Parse(txtScore.Text);
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddPage));
+            
         }
     }
 }

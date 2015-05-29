@@ -6,7 +6,7 @@ using SQLite;
 namespace SampleSQLite
 {
     [Table("Items")]
-    class Items
+    public class Items
     {
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }

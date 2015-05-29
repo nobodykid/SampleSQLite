@@ -6,8 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+	<Page.BottomAppBar>
+		<CommandBar>
+			<AppBarButton x:Name="btnAdd" Icon="Add" Label="add item" Click="btnAdd_Click"/>
+		</CommandBar>
+	</Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    	<StackPanel HorizontalAlignment="Left" Height="112" Margin="40,64,0,0" VerticalAlignment="Top" Width="649">
+    		<TextBlock TextWrapping="Wrap" Text="Wall of Score" Style="{StaticResource HeaderTextBlockStyle}" Height="70"/>
+    		<TextBlock TextWrapping="Wrap" Text="My Application" Style="{StaticResource SubheaderTextBlockStyle}"/>
+    	</StackPanel>
+    	<TextBlock HorizontalAlignment="Left" Margin="320,250,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Style="{StaticResource SubheaderTextBlockStyle}"/>
+    	<TextBlock HorizontalAlignment="Left" Margin="743,250,0,0" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" Style="{StaticResource SubheaderTextBlockStyle}"/>
+    	<ListView HorizontalAlignment="Left" Height="427" Margin="176,307,0,0" VerticalAlignment="Top" Width="356"/>
+    	<ListView HorizontalAlignment="Left" Height="427" Margin="604,307,0,0" VerticalAlignment="Top" Width="359"/>
 
     </Grid>
 </Page>
